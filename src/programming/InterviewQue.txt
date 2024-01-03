@@ -1,0 +1,184 @@
+Introduce Yourself
+I am saurabh, 2.9 year experienced engineer with strong background in software development. 
+I am currently working in a banking domain.
+
+
+================================================
+core java-
+
+Q1.what is platform independent in java ?
+you can compile your program on one machine and you can run your program on multiple machine.
+like example. you can compile your program on windows machine where your Java file gets converted into .class file  and as JVM installed on Linux or mac OS so 
+you can take .class file from windows machine and run on mac or Linux machine.(Write Once, run anywhere)
+java platform independence means that once you write code in java, it can run on any device or operating system without changes.
+This happens because of the Java compiler, Java compiler translate java code into a universal format called byteCode. This byteCode
+can be executed on any system that has a JVM installed, This byte code is portable/versatile and platform independent.
+
+Q2. Diff b/w  JDK JRE JVM
+JVM - it knows as a Java virtual machine. It is responsible for translating Java byteCode into machine specific code that the hardware can execute. The JVM is specific to each platform(Windows, mscOS, Linux, etc). it provide platform independence by enabling Java program to run on any device or operating system that should have compatible JVM installed.
+
+JRE- It is known as Java Runtime Environment. The JRE is is a package of software that includes the JVM, along with libraries and other components required to run Java application but not to develop them. It is what you need to run Java programs. It doesn't contain tools and utilities like compilers needed for Java development. 
+
+JDK - The JDK is known as Java development Kit. The JDK is a bundle of software that includes everything in the JRE, plus development tools such as compilers, 
+debugger, and other tools needed to develop Java applications, If you are planning to write and compile Java code, You will need the JDK. It includes the JRE for running your programs and additional tools to create and debug them.
+
+Summary:
+JVM - execute Java byte-code on a specific platform.
+JRE-  contains the JVM and Library to run Java application.
+JDK - includes the JRE and development tools to write, compile, and debug Java code.
+
+
+
+
+================================= String========================
+Q3. 
+String  s1 = "Sachin"; // literal
+String s2 = new String ("Sachin");
+boolean m1 = s1.equals(s2); // true
+boolean m2 = s1==s2; // false
+what is m1 and m2?
+
+Ans:- 
+
+String  s1 = "Sachin" create a string "Sachin" and strore it in the string pool. Then String s2 = new String ("Sachin") creates a new String object "Sachin" in the heap memory.
+
+s1.equals(s2) => compares the contents of the string, which is same ("Sachin"), it returns true.
+
+s1==s2 :- it compares reference of the strings. In this case, s1 refers to the string in the string string pool, while s2 refers to the new string object in the heap. therefore s2==s1 is false because they reference different object in the memory, even though their content is same.(two different instances)
+
+
+
+=================Garbage Collector/ Memory Management==============
+Q4. Garbage Collector :
+In java we can not get allocate or deallocates memory. It is done automatically by your JVM. So Garbage collection is a mechanism when the object no longer referenced by the program at that stage the garbage collection rns after some frequency. And garbage collector collect your unused object after some certain duration and that object will deleted your your heap memory.  
+
+OR
+
+In Java, the Garbage Collector (GC) is a fundamental part of the Java Virtual Machine (JVM) responsible for automatic memory management. When you create objects in Java, memory is allocated to store them. Over time, some of these objects are no longer needed or accessible by the program.
+ 
+The garbage collector keeps track of these unused objects and frees up the memory they occupy. It identifies and removes objects that are no longer referenced by the program. it allowing that memory to be reused for new objects. This process helps prevent memory leaks and allows developers to focus on writing code without worrying about manually deallocating memory. Essentially, it cleans up unused objects, keeping the memory efficient and available for the program to use.
+
+OR 
+
+In Java, the Garbage Collector (GC) is a fundamental part of the Java Virtual Machine (JVM) responsible for automatic memory management. Its primary task is to automatically reclaim memory that is no longer in use or referenced by any part of the program, thus freeing up memory resources.
+ 
+Here's how it works:
+ 
+1. **Identifying Unused Objects:** The GC constantly monitors the objects created by a Java program. When an object is no longer referenced by any part of the program (i.e., it's unreachable), it becomes a candidate for garbage collection.
+ 
+2. **Mark and Sweep:** The GC uses different algorithms to determine which objects are no longer in use. One common approach is the "Mark and Sweep" algorithm. It traverses all reachable objects starting from known root objects (like global variables or objects in the execution stack), marks them as alive, and then sweeps through memory, deallocating the memory occupied by the unmarked (garbage) objects.
+ 
+3. **Memory Reclamation:** After identifying the unreachable objects, the GC deallocates their memory, making it available for new objects. This process helps prevent memory leaks and allows efficient use of memory resources.
+ 
+4. **Different Garbage Collection Algorithms:** Java offers various GC algorithms (like Serial, Parallel, CMS, G1, etc.), each with its own strengths and trade-offs in terms of throughput, pause times, and efficiency.
+ 
+5. **Tuning and Optimization:** For performance optimization, developers can tune the GC by adjusting parameters to match the application's memory requirements and performance goals. This includes specifying different GC algorithms or adjusting the memory allocation settings.
+ 
+The Garbage Collector in Java automates memory management, relieving developers from explicitly deallocating memory. However, it's essential to understand its behavior and the impact on application performance, especially for large-scale systems where GC behavior can affect performance characteristics.
+
+OR
+
+Imagine your computer has a limited amount of memory, like a backpack with limited space. The Garbage Collector in Java is like a helpful friend who checks your backpack from time to time. When it sees items you're not using anymore, it takes them out to create space for new stuff.
+ 
+Here's how it works:
+ 
+1. **Finding Unused Stuff:** It looks through the things in your backpack (the memory in your computer). If it finds something you're not using anymore, like an old toy you don't play with, it decides to take it out.
+ 
+2. **Clearing Space:** Once it knows what you don't need, it removes those things to make room for new things you might want to put in your backpack later.
+ 
+3. **Helps Prevent Clutter:** This friend keeps your backpack tidy by getting rid of stuff you don't need anymore, so your backpack (memory) doesn't get too full.
+ 
+4. **Different Ways to Tidy Up:** There are different methods this friend uses to keep your backpack organized, like sorting through your things in different ways to make sure it stays tidy.
+ 
+In simple terms, the Garbage Collector helps your computer manage its memory so that it doesn't get cluttered with things you don't need anymore, making room for new things you might need later.
+
+
+Q5. Can I run garbage collection forcefully?
+Yes, in Java, you can suggest or invoke the garbage collector, but you can not forcefully control it with absolute certainly. The "System.gc()" method is used to suggest JVM(java virtual machine) should run the garbage collector. However it important to note that calling this method does not guarantee immediate garbage collection. The decision to actually run the garbage collector ultimately depends on the JVM implementation and its own algorithm for memory management.
+
+
+=================Collection=========================
+Q6. what is the contract b/w equals and hashcode method which is use in collection.
+ans:- if we have two object emp1 and emp2.  emp1.equals(emp2) it return me true. So whenever two object are equals their has code have to be same. But reverse is not true that means whenever two objects haveing same hashcode the equal might return true or might return false. That means whenever two objects are equal then the hashcode have to be exactly same but whenever two object have the same hashcode that does not mean that both object are equal. so this is the contract.
+
+OR
+
+**`equals()` Method**: This method is used to compare the equality of two objects. It's overridden from the `Object` class to provide a specific implementation for comparing the content or fields of objects to check if they are equal. When using collections, especially `HashMap` or `HashSet`, `equals()` is crucial to determine if two objects are considered the same.
+ 
+- **`hashCode()` Method**: This method returns a hash code value for an object. The hash code is an integer that represents an object's memory address or some unique identifier derived from the object's fields. In collections that use hashing, like `HashMap` or `HashSet`, the `hashCode()` method is used to determine the bucket where an object should be stored.
+
+
+The contract between these two methods is crucial:
+- If two objects are equal according to the `equals()` method, they must produce the same hash code when the `hashCode()` method is called on each of them.
+- However, the reverse is not necessarily true: two objects producing the same hash code are not required to be equal according to the `equals()` method. This situation is known as a "hash collision."
+
+
+why?
+The reason why two objects with the same hash code might not be considered equal according to the `equals()` method is because hash codes are not guaranteed to be unique for different objects.
+ 
+The `hashCode()` method generates an integer value based on the object's fields. However, different objects can have the same hash code due to the way hash codes are calculated (for instance, two different strings might produce the same hash code). This creates what's known as a "hash collision."
+ 
+In contrast, the `equals()` method compares the actual content or fields of the objects to determine if they are equal. Due to the potential for hash collisions, objects with the same hash code might not be equal according to their content, which is what `equals()` checks for. Therefore, while equal objects must produce the same hash code, the reverse doesn't hold true—objects with the same hash code might not be equal.
+
+==========================OPPS==============================
+
+Q7. What is difference between abstract class and interface. When you should go for abstract class and when we should go for interfaces.
+Ans:- Abstract class is where you have some abstract method in the class and if that is IS-A relationship between your classes then you can go for abstract class. But if there is certain feature where there is no relationship between the classes then you have to go for the interfaces. And by default all the method in the interface are abstract. But going forward in java 8 there is a feature where you can write default methods in your interfaces.
+So just to summarize you can go for the abstract class when there is IS-A relationship or parental relationship or superclass subclass relationship then go for the abstract class and if there is no such relationship between the objects then you can go for the interface.
+
+OR 
+Abstract classes and interfaces are both used for abstraction in Java, but they have some key differences:
+ 
+- **Abstract Class**:
+  - Can contain both abstract and concrete methods.
+  - Can have member variables (fields).
+  - Allows constructors.
+  - Supports method implementation.
+  - Enables the use of access modifiers.
+  - A class can extend only one abstract class.
+ 
+- **Interface**:
+  - Contains only abstract method signatures (prior to Java 8; default and static methods were introduced later).
+  - Cannot have member variables except for constants.
+  - Doesn’t allow constructors.
+  - Does not contain method implementations (prior to Java 8).
+  - Supports multiple inheritance, as a class can implement multiple interface
+  
+
+*When to use Abstract Class vs. Interface**:
+ 
+- **Abstract Class Usage**:
+  - Use an abstract class when you want to provide a default implementation or shared functionality among subclasses.
+  - When you need to define a common base class for related classes.
+ 
+*Example*:
+Consider an "Animal" hierarchy where you have abstract methods like `eat()` and `sleep()`. An abstract class "Animal" can define default behavior for these methods like "Animal" can sleep and eat but won't provide the specific implementation. Subclasses like "Dog," "Cat," and "Bird" can extend "Animal" and provide their unique implementations for these methods.
+ 
+- **Interface Usage**:
+  - Use interfaces when you want multiple unrelated classes to implement common behaviors without inheritance limitations.
+  - When you need a contract ensuring that classes implement specific methods without providing any implementation details.
+ 
+*Example*:
+Think of a scenario where different types of vehicles implement a "Driveable" interface. Each vehicle (Car, Bicycle, Boat) has its own implementation of the `drive()` method, ensuring they all can be driven but in their own unique ways.
+ 
+In summary, use abstract classes when you have a "is-a" relationship and need to share code among related classes. Use interfaces when you want to define a contract for unrelated classes to implement common behavior.
+has context menu
+ 
+ 
+============================JAVA 8=================================
+Q9. Important feature of Java 8
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+

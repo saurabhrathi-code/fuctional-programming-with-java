@@ -1,0 +1,8 @@
+
+N	java:S106"9Replace this use of System.out or System.err by a logger.(‚¨Ö§
+S	java:S106"9Replace this use of System.out or System.err by a logger.(·ùßóýÿÿÿÿ
+Z	java:S106$"9Replace this use of System.out or System.err by a logger.(·ùßóýÿÿÿÿ8ïžõÛÊ1
+_
+java:S1144"DRemove this unused private "printALlNumbersInListStructured" method.(Šóá¤ûÿÿÿÿ
+`
+java:S1144 "ERemove this unused private "printEvenNumbersInListStructured" method.(ÝÙ »üÿÿÿÿ

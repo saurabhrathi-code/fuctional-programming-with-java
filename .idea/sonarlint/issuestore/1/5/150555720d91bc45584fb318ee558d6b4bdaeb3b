@@ -1,0 +1,22 @@
+
+l
+java:S1854""VRemove this useless assignment to local variable "coursesSortedByLengthOfCourseTitle".(Ó¡Ì·
+Q
+java:S1854"<Remove this useless assignment to local variable "greatest".(é‡ž%
+R
+java:S1854"7Remove this useless assignment to local variable "sum".(ØŽ€§ûÿÿÿÿ
+X
+java:S1854"BRemove this useless assignment to local variable "evenNumberOnly".(Æ¥Ôì
+V
+java:S1854"ARemove this useless assignment to local variable "squareNumbers".(ªÆãU
+S	java:S106"9Replace this use of System.out or System.err by a logger.(¬ÆŸ•øÿÿÿÿ
+G
+java:S1481"2Remove this unused "squareNumbers" local variable.(ªÆãU
+I
+java:S1481"3Remove this unused "evenNumberOnly" local variable.(Æ¥Ôì
+C
+java:S1481"(Remove this unused "sum" local variable.(ØŽ€§ûÿÿÿÿ
+B
+java:S1481"-Remove this unused "greatest" local variable.(é‡ž%
+]
+java:S1481""GRemove this unused "coursesSortedByLengthOfCourseTitle" local variable.(Ó¡Ì·
