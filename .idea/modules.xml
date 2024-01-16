@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../corePattern/corePattern.iml" filepath="$PROJECT_DIR$/../corePattern/corePattern.iml" />
       <module fileurl="file://$PROJECT_DIR$/fuctional-programming-with-java.iml" filepath="$PROJECT_DIR$/fuctional-programming-with-java.iml" />
     </modules>
   </component>
